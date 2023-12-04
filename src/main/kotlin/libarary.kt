@@ -1,7 +1,4 @@
-class Book(val title: String, val author: String, val publicationYear: Int) {
-    var isBorrowed: Boolean = false
-
-}
+class Book(val title: String, val author: String, val publicationYear: Int, var isBorrowed: Boolean = false)
 
 class Library {
     private val books = mutableListOf<Book>()
@@ -11,16 +8,20 @@ class Library {
     }
 
     fun displayBooks() {
-        if (books.isEmpty()) {
-            println("The library is empty.")
-        } else {
-            println("Books in the library:")
-            for (book in books) {
-                if (!book.isBorrowed) {
-                    println("Book Name: ${book.title} Author: ${book.author} Published Year: ${book.publicationYear}")
-                }
+        var isAvailable:Boolean = false
+        for (book in books) {
+            if (!book.isBorrowed) {
+                println("${book.title} by ${book.author} (${book.publicationYear})")
+                isAvailable = true
+                break
             }
         }
+<<<<<<< HEAD
+        if (!isAvailable){
+            println("Not Available book")
+        }
+    }
+=======
     }
 
 // Binthia parveen Biva
@@ -54,3 +55,4 @@ class Library {
             println("Not Available book")
         }
     }
+>>>>>>> ffecc58f40e03892ece0ba52acbcd100a2067d88
